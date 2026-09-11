@@ -19,7 +19,7 @@
     <script id="startup-load-check-bootstrap">/* Kept as an inline, ES5 script: it must run even if the module graph cannot. */
 (function () {
   'use strict';
-  var config = {"assetVersion":"0.87.0-ra650aef-df468b412","scriptRoots":[],"scriptPaths":["js/app.js","js/bot1.js","js/bot2.js","js/bot3.js","js/ffmpeg-core.js","js/ffmpeg.js","js/file-explorer.js","js/race-core.js","js/race-ui.js","js/watchdog.js","js/worker.js"],"endpoint":"https://telemetry.bj1.wangerhuoda.cn/client-incidents","successSampleRate":0.02};
+  var config = {"assetVersion":"0.87.0-ra650aef-d3634901c","scriptRoots":[],"scriptPaths":["js/app.js","js/bot1.js","js/bot2.js","js/bot3.js","js/ffmpeg-core.js","js/ffmpeg.js","js/file-explorer.js","js/race-core.js","js/race-ui.js","js/vendor.js","js/watchdog.js","js/worker.js"],"endpoint":"https://telemetry.bj1.wangerhuoda.cn/client-incidents","successSampleRate":0.02};
   var startedAt = Date.now();
   var diagnosticId = startedAt.toString(36) + '-' + Math.random().toString(36).slice(2, 10);
   var active = true;
@@ -363,8 +363,8 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./favicon.ico" />
     <link rel="apple-touch-icon" href="./res/pwa/icon-192.png" />
-    <link href="./res/fonts/fonts.css?v=0.87.0-ra650aef-df468b412" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css?v=0.87.0-ra650aef-df468b412" type="text/css" />
+    <link href="./res/fonts/fonts.css?v=0.87.0-ra650aef-d3634901c" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css?v=0.87.0-ra650aef-d3634901c" type="text/css" />
     <style>
       #ra2web-root {
         position: relative;
@@ -519,7 +519,73 @@
     <script>
       window.__ra2webTransportMode = 'websocket-only';
     </script>
-    <script type="module" crossorigin src="./js/app.js?v=0.87.0-ra650aef-df468b412" integrity="sha384-PgY3NBpu/KMTOehcDoOip0cLycFnyk4COAdZrPgE/da+eP+Cfpxz8XOVgnqUjLLv"></script>
+    <script type="application/ra2web-entry" id="ra2web-module-entry" crossorigin src="./js/app.js?v=0.87.0-ra650aef-d3634901c" integrity="sha384-3pmIKkB2ecf6+SXGh93VSJIpSqMUNc3dELsUSGiUVLW5He/JfwOlHW2SBTBXs1jz"></script><script>(function () {
+  var config = {"assetVersion":"0.87.0-ra650aef-d3634901c","vendorVersion":"2ddb39d8eec1dd688a616b852dc50a9bf86bbe6ab7a8f5a6b16bf666054aa310","vendorIntegrity":"sha384-qB9KmnwFDyjylrr/zQ0JrPccfYQQ0BGQwvXLNciFpg1gq6UzguXx23hTykGQNNwQ","vendorUrl":"./js/vendor.js?v=2ddb39d8eec1dd688a616b852dc50a9bf86bbe6ab7a8f5a6b16bf666054aa310"};
+  var entry = document.getElementById('ra2web-module-entry');
+  var vendorUrl = new URL(config.vendorUrl, location.href).href;
+
+  function start() {
+    var preload = document.createElement('link');
+    preload.rel = 'modulepreload';
+    preload.href = vendorUrl;
+    preload.integrity = config.vendorIntegrity;
+    preload.crossOrigin = 'anonymous';
+    document.head.appendChild(preload);
+    var script = document.createElement('script');
+    script.type = 'module';
+    script.src = entry.getAttribute('src');
+    script.integrity = entry.getAttribute('integrity');
+    script.crossOrigin = 'anonymous';
+    document.head.appendChild(script);
+  }
+
+  function controllerInfo() {
+    var controller = navigator.serviceWorker && navigator.serviceWorker.controller;
+    if (!controller || location.pathname.indexOf('/old/') === 0) return Promise.resolve(null);
+    return new Promise(function (resolve) {
+      var channel = new MessageChannel();
+      var timer = setTimeout(function () { channel.port1.close(); resolve(null); }, 2000);
+      channel.port1.onmessage = function (event) {
+        clearTimeout(timer);
+        channel.port1.close();
+        resolve(event.data);
+      };
+      controller.postMessage({ type: 'RA2WEB_GET_VERSION' }, [channel.port2]);
+    });
+  }
+
+  // Protocol 2 interprets every ?v as an app release. Seed only its exact
+  // dependency cache through a release URL it understands, verifying SRI first.
+  // This does not activate a worker or reload other tabs / ongoing matches.
+  function prepareLegacyController(info) {
+    if (!info || info.cacheProtocol !== 2) return;
+    return caches.open('ra2web-app-' + config.vendorVersion).then(function (cache) {
+      return cache.match(vendorUrl).then(function (cached) {
+        if (cached) return;
+        var compatibleUrl = new URL(vendorUrl);
+        compatibleUrl.searchParams.set('v', config.assetVersion);
+        return fetch(compatibleUrl.href, { cache: 'no-cache', integrity: config.vendorIntegrity }).then(function (response) {
+          if (!response.ok) throw new Error('Dependency migration failed: HTTP ' + response.status);
+          // A cached network Response retains its original URL. Clear that URL
+          // after integrity verification so import.meta.url uses the canonical
+          // dependency request, not the temporary application-version alias.
+          return cache.put(vendorUrl, new Response(response.body, {
+            status: response.status, statusText: response.statusText, headers: response.headers
+          }));
+        });
+      });
+    });
+  }
+
+  var ready = document.readyState !== 'loading' ? Promise.resolve() : new Promise(function (resolve) {
+    document.addEventListener('DOMContentLoaded', resolve, { once: true });
+  });
+  Promise.all([ready, controllerInfo().then(prepareLegacyController)]).then(start, function (error) {
+    window.__ra2webStartupLoadCheck.fail('启动依赖加载失败', error, vendorUrl, 'resource');
+  });
+})();
+</script>
+    
   </head>
   <body class="no-js">
     <div id="ra2web-root">
@@ -543,7 +609,7 @@
               正在检测客户端配置、界面资源和游戏资源清单。
             </p>
             <div class="startup-load-check-progress-meta">
-              <span>加载版本：<strong id="startup-load-check-version">0.87.0-ra650aef-df468b412</strong></span>
+              <span>加载版本：<strong id="startup-load-check-version">0.87.0-ra650aef-d3634901c</strong></span>
               <span>启动进度</span>
             </div>
             <div

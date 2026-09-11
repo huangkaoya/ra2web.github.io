@@ -1,4 +1,4 @@
-const config = {"version":"0.87.0-ra650aef-df468b412","precache":["/","/index.html","/manifest.webmanifest","/js/7zz.wasm?v=0.87.0-ra650aef-df468b412","/js/app.js?v=0.87.0-ra650aef-df468b412","/js/bot1.js?v=0.87.0-ra650aef-df468b412","/js/bot2.js?v=0.87.0-ra650aef-df468b412","/js/bot3.js?v=0.87.0-ra650aef-df468b412","/js/ffmpeg-core.js?v=0.87.0-ra650aef-df468b412","/js/ffmpeg-core.wasm?v=0.87.0-ra650aef-df468b412","/js/ffmpeg.js?v=0.87.0-ra650aef-df468b412","/js/file-explorer.css?v=0.87.0-ra650aef-df468b412","/js/file-explorer.js?v=0.87.0-ra650aef-df468b412","/js/fileexplorer_actions.woff?v=0.87.0-ra650aef-df468b412","/js/fileexplorer_sprites.png?v=0.87.0-ra650aef-df468b412","/js/race-core.js?v=0.87.0-ra650aef-df468b412","/js/race-ui.js?v=0.87.0-ra650aef-df468b412","/js/watchdog.js?v=0.87.0-ra650aef-df468b412","/js/worker.js?v=0.87.0-ra650aef-df468b412","/res/werhdexp.mix?v=0.87.0-ra650aef-df468b412","/config.json?v=0.87.0-ra650aef-df468b412","/res/overlay/art.ini?v=0.87.0","/res/overlay/modcd.ini?v=0.87.0","/res/overlay/mpbattle.ini?v=0.87.0","/res/overlay/mpcoop.ini?v=0.87.0","/res/overlay/mpduel.ini?v=0.87.0","/res/overlay/mpfreeforallmd.ini?v=0.87.0","/res/overlay/mpmeat.ini?v=0.87.0","/res/overlay/mpmodes.ini?v=0.87.0","/res/overlay/mpmw.ini?v=0.87.0","/res/overlay/mpnaval.ini?v=0.87.0","/res/overlay/mprace.ini?v=0.87.0","/res/overlay/mpspecial.ini?v=0.87.0","/res/overlay/mpteammd.ini?v=0.87.0","/res/overlay/mpunholy.ini?v=0.87.0","/res/overlay/nodogengikills.ini?v=0.87.0","/res/overlay/ra2.csf?v=0.87.0","/res/overlay/rules.ini?v=0.87.0","/res/overlay/soundcd.ini?v=0.87.0","/res/overlay/ui.ini?v=0.87.0"],"assetIntegrity":{"/js/7zz.wasm":"sha384-H9Y2QJq2/oAPJMt88VZUjDwml6ze+vc8r8KFdob2xPeSHHGstEyKtYVMTqyaWFPV","/js/app.js":"sha384-PgY3NBpu/KMTOehcDoOip0cLycFnyk4COAdZrPgE/da+eP+Cfpxz8XOVgnqUjLLv","/js/bot1.js":"sha384-ry5TJVMkOv1uagGqBy9iC1mV452FmxWU8r8adzBsLA4kIfaIqxoOlXSvzXIcmOc1","/js/bot2.js":"sha384-/4MOLUjY2ZF8f8ahGOOWKgFR4K0JA1j4b+jqy5ONtWUlrcGL5V0Fq6J56b+8Nht9","/js/bot3.js":"sha384-JAZONG6YYk7o77JEl83oxvGEA4TRr1Y8TJhiVldw6Ld9RqfVZxLHyM3W6nGv+h3V","/js/ffmpeg-core.js":"sha384-jpwSjDZaVK2/1FXuiCp4hmwYlTk0qi4qnFuUVCA4r2Zaynjz1EiwvzNUXTEWfe/3","/js/ffmpeg-core.wasm":"sha384-TZtxG9NUmwRWTafU1m/iInunVkc0TMlqpUVltg7BlwxBzoOWMNQXZwtPE8hoc3Dw","/js/ffmpeg.js":"sha384-hFZ8Occwk5hUZMtakhsQXRt/m3bg+IqqTvLU70O6NrQ90p/SuDUYUWomaDuH/s/e","/js/file-explorer.css":"sha384-NJrbt2asYV64P3c6YUSWxN4r+2x/rVanF8sECKMA/IozoRNzafAh3H4zyBpsQC6K","/js/file-explorer.js":"sha384-dOg/ov4LkR7DeokLaH3lAWuKoBJLlFPJ82uH05HpcK9cyNj8vDXQ8NQcj0BMRmn0","/js/fileexplorer_actions.woff":"sha384-+ZVX0O3ik73hIinVSNl9d7VI02WYUstFZy+/3UQxOXdgsv1tI7BKCGgOydAwuDV5","/js/fileexplorer_sprites.png":"sha384-Crx/49GGj7DHxIyg5qfV+OMmWAKu82PnBx9lBs/zpDRPZnoBdli7SZIt6jRjExHt","/js/race-core.js":"sha384-S3YMA9w5a3Nv+nudIN1caSGdEUfq+jE+n+ZJSuT16KTqLJykOeinME+Nqk1CqMRZ","/js/race-ui.js":"sha384-sdCu0bHoTdCttQxduT62bbjq0VPRzWF40v8Gn+cJI9nYK3yTWkLr7r9kzmOg9f2h","/js/watchdog.js":"sha384-gYIxJ9WsJT2FL6T5cvpXO21N9H0Fgwr6Ljifk0SObtjOpaRErynRUQ6GjcCU4amT","/js/worker.js":"sha384-DXU5gykHTYL3IWULHRra2CownrClgW76Mq7ezggUzsSSk4yEGggpSbXZlbuQ5o32","/":"sha384-VOXUHnwpJTIo2KuYFxeqVYHf9Vo5JnEyJ02cGQy1Q1XzPSQh9W5xeSW3mf8SS+Xk","/index.html":"sha384-VOXUHnwpJTIo2KuYFxeqVYHf9Vo5JnEyJ02cGQy1Q1XzPSQh9W5xeSW3mf8SS+Xk"},"updateSensitivePaths":["/config.json","/servers.json","/mods.json","/official-map-redirect.json","/old/versions.json","/version.json"],"gameResourcePrefixes":["/v2/","/map/","/mod/","/music/"]};
+const config = {"version":"0.87.0-ra650aef-d3634901c","precache":["/","/index.html","/manifest.webmanifest","/js/7zz.wasm?v=0.87.0-ra650aef-d3634901c","/js/app.js?v=0.87.0-ra650aef-d3634901c","/js/bot1.js?v=0.87.0-ra650aef-d3634901c","/js/bot2.js?v=0.87.0-ra650aef-d3634901c","/js/bot3.js?v=0.87.0-ra650aef-d3634901c","/js/ffmpeg-core.js?v=0.87.0-ra650aef-d3634901c","/js/ffmpeg-core.wasm?v=0.87.0-ra650aef-d3634901c","/js/ffmpeg.js?v=0.87.0-ra650aef-d3634901c","/js/file-explorer.css?v=0.87.0-ra650aef-d3634901c","/js/file-explorer.js?v=0.87.0-ra650aef-d3634901c","/js/fileexplorer_actions.woff?v=0.87.0-ra650aef-d3634901c","/js/fileexplorer_sprites.png?v=0.87.0-ra650aef-d3634901c","/js/race-core.js?v=0.87.0-ra650aef-d3634901c","/js/race-ui.js?v=0.87.0-ra650aef-d3634901c","/js/vendor.js?v=2ddb39d8eec1dd688a616b852dc50a9bf86bbe6ab7a8f5a6b16bf666054aa310","/js/watchdog.js?v=0.87.0-ra650aef-d3634901c","/js/worker.js?v=0.87.0-ra650aef-d3634901c","/res/werhdexp.mix?v=0.87.0-ra650aef-d3634901c","/config.json?v=0.87.0-ra650aef-d3634901c","/res/overlay/art.ini?v=0.87.0","/res/overlay/modcd.ini?v=0.87.0","/res/overlay/mpbattle.ini?v=0.87.0","/res/overlay/mpcoop.ini?v=0.87.0","/res/overlay/mpduel.ini?v=0.87.0","/res/overlay/mpfreeforallmd.ini?v=0.87.0","/res/overlay/mpmeat.ini?v=0.87.0","/res/overlay/mpmodes.ini?v=0.87.0","/res/overlay/mpmw.ini?v=0.87.0","/res/overlay/mpnaval.ini?v=0.87.0","/res/overlay/mprace.ini?v=0.87.0","/res/overlay/mpspecial.ini?v=0.87.0","/res/overlay/mpteammd.ini?v=0.87.0","/res/overlay/mpunholy.ini?v=0.87.0","/res/overlay/nodogengikills.ini?v=0.87.0","/res/overlay/ra2.csf?v=0.87.0","/res/overlay/rules.ini?v=0.87.0","/res/overlay/soundcd.ini?v=0.87.0","/res/overlay/ui.ini?v=0.87.0"],"assetIntegrity":{"/js/7zz.wasm":"sha384-H9Y2QJq2/oAPJMt88VZUjDwml6ze+vc8r8KFdob2xPeSHHGstEyKtYVMTqyaWFPV","/js/app.js":"sha384-3pmIKkB2ecf6+SXGh93VSJIpSqMUNc3dELsUSGiUVLW5He/JfwOlHW2SBTBXs1jz","/js/bot1.js":"sha384-JZEhELgZYSmnzpoykDxbwIAJ1Ux9Cl/EcUAron3IU21r0s/wGKND7boE6o5bpWBK","/js/bot2.js":"sha384-3SMhiM5qWs5O+VrsZ+uC1TNG0HPOj9Pxa/lBZi/FTuSkwpHx+bNIpZ14L6O93qxP","/js/bot3.js":"sha384-d5sWqU+bHmr1SeNrXgPO76F/0x5r2napmaUYB8veGFN7gw5n72lBEAZW7PaCLYym","/js/ffmpeg-core.js":"sha384-jpwSjDZaVK2/1FXuiCp4hmwYlTk0qi4qnFuUVCA4r2Zaynjz1EiwvzNUXTEWfe/3","/js/ffmpeg-core.wasm":"sha384-TZtxG9NUmwRWTafU1m/iInunVkc0TMlqpUVltg7BlwxBzoOWMNQXZwtPE8hoc3Dw","/js/ffmpeg.js":"sha384-ux6nnLWxMeMGsPPwgVRg4DjMh4/vO3qLDJBAApXqaPxBynemVXnYbx9wskGjPYR5","/js/file-explorer.css":"sha384-XtBBB35b7PkvTJlSGMOE8785w9Cf6Cm7gkgCrcWU7n4v3Pa06mCGL+BIlEuNNkv6","/js/file-explorer.js":"sha384-0+u7mRujOeD8YuiiiNmGaObnpupxDqOVztdbx9bQym1veKLJ9douHOUb+3n3DaV+","/js/fileexplorer_actions.woff":"sha384-+ZVX0O3ik73hIinVSNl9d7VI02WYUstFZy+/3UQxOXdgsv1tI7BKCGgOydAwuDV5","/js/fileexplorer_sprites.png":"sha384-Crx/49GGj7DHxIyg5qfV+OMmWAKu82PnBx9lBs/zpDRPZnoBdli7SZIt6jRjExHt","/js/race-core.js":"sha384-kGtbA7Hq41yVpIjD+kMn6dFgM7sODv2pV460JjejSRkPSBuEsjb38/3uvUGzWvhm","/js/race-ui.js":"sha384-PB4zvhz6362FOtKL0rY+ZS0ZGR6u7OBoMWeYBX/B13FD8nOmN98WDBxzJW54kAZG","/js/vendor.js":"sha384-qB9KmnwFDyjylrr/zQ0JrPccfYQQ0BGQwvXLNciFpg1gq6UzguXx23hTykGQNNwQ","/js/watchdog.js":"sha384-iZ/lJHeyAr5wByWTZIgj9LkqrrnMd4V0+W7Aixwt+GALAbXvl0VlgCHty6MOBOVM","/js/worker.js":"sha384-vfWiwQEmu+Qc3q05mYPI/oEbLxGSOBu62GvdJMM5INY/wAkbpcv4F7YmrBYJA1xI","/":"sha384-Xta3njm0jX9r083Qiz6W4zbY76kRrxG7kq5u1EAsa5Ozm+DfDk4VIB0Ps6p9dbi5","/index.html":"sha384-Xta3njm0jX9r083Qiz6W4zbY76kRrxG7kq5u1EAsa5Ozm+DfDk4VIB0Ps6p9dbi5"},"runtimeVersions":{"/js/vendor.js":"2ddb39d8eec1dd688a616b852dc50a9bf86bbe6ab7a8f5a6b16bf666054aa310"},"updateSensitivePaths":["/config.json","/servers.json","/mods.json","/official-map-redirect.json","/old/versions.json","/version.json"],"gameResourcePrefixes":["/v2/","/map/","/mod/","/music/"]};
 const RA2WEB_SW_VERSION = config.version;
 const RA2WEB_APP_CACHE = 'ra2web-app-' + RA2WEB_SW_VERSION;
 const RA2WEB_GAMERES_CACHE = 'ra2web-gameres-' + RA2WEB_SW_VERSION;
@@ -7,11 +7,20 @@ const runtimeManifestKey = '/__ra2web_runtime_manifest__';
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(RA2WEB_APP_CACHE).then(async cache => {
-    await cache.addAll(config.precache.map(url => {
+    const dependencies = config.precache.filter(url => config.runtimeVersions?.[new URL(url, self.location.origin).pathname]);
+    await Promise.all(dependencies.map(async url => {
+      const integrity = config.assetIntegrity[new URL(url, self.location.origin).pathname];
+      const request = new Request(url, { integrity });
+      const cached = await retainedDependency(request);
+      const response = cached || await fetch(request);
+      if (!response?.ok || (!cached && !isCacheable(response))) throw new Error('Dependency precache failed: ' + url);
+      await cache.put(request, response.clone());
+    }));
+    await cache.addAll(config.precache.filter(url => !dependencies.includes(url)).map(url => {
       const integrity = config.assetIntegrity[new URL(url, self.location.origin).pathname];
       return new Request(url, { cache: 'reload', ...(integrity ? { integrity } : {}) });
     }));
-    await cache.put(runtimeManifestKey, new Response(JSON.stringify({ version: RA2WEB_SW_VERSION, integrity: config.assetIntegrity })));
+    await cache.put(runtimeManifestKey, new Response(JSON.stringify({ version: RA2WEB_SW_VERSION, integrity: config.assetIntegrity, runtimeVersions: config.runtimeVersions })));
   }));
 });
 
@@ -21,7 +30,7 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('message', event => {
   if (event.data?.type === 'RA2WEB_GET_VERSION') {
-    event.ports[0]?.postMessage({ type: 'RA2WEB_SW_VERSION', version: RA2WEB_SW_VERSION, cacheProtocol: 2 });
+    event.ports[0]?.postMessage({ type: 'RA2WEB_SW_VERSION', version: RA2WEB_SW_VERSION, cacheProtocol: 3 });
   } else if (event.data?.type === 'RA2WEB_SKIP_WAITING') {
     event.waitUntil(applyWhenClientsAreReady(event));
   } else if (event.data?.type === 'RA2WEB_GENERATION_BOOTED') {
@@ -116,6 +125,7 @@ async function networkFirst(request, cacheName) {
 async function versionedRuntime(event, url) {
   const version = url.searchParams.get('v');
   if (!version) return new Response('Runtime request requires a build version', { status: 409 });
+  if (url.pathname === '/js/vendor.js' && /^[a-f0-9]{64}$/.test(version)) return dependencyRuntime(event, url, version);
   const cache = await caches.open('ra2web-app-' + version);
   const cached = await cache.match(event.request);
   if (cached) return cached;
@@ -146,6 +156,38 @@ async function versionedRuntime(event, url) {
   if (!integrity) return new Response('Runtime file is not part of the requested build', { status: 404 });
   const response = await fetch(new Request(event.request, { cache: 'no-cache', integrity }));
   if (isCacheable(response)) await cache.put(event.request, response.clone());
+  return response;
+}
+
+async function retainedDependency(request) {
+  // Exact URL includes the dependency content version. Reuse across app
+  // generations so installation also avoids downloading unchanged libraries.
+  for (const name of await caches.keys()) {
+    if (!name.startsWith('ra2web-app-')) continue;
+    const response = await (await caches.open(name)).match(request);
+    if (response) return response;
+  }
+}
+
+async function dependencyRuntime(event, url, version) {
+  const cached = await retainedDependency(event.request);
+  if (cached) return cached;
+  let integrity;
+  if (config.runtimeVersions?.[url.pathname] === version) integrity = config.assetIntegrity[url.pathname];
+  else {
+    const response = await fetch('/version.json', { cache: 'no-store' });
+    if (!response.ok) return response;
+    const manifest = await response.json();
+    if (manifest.runtimeVersions?.[url.pathname.slice(1)] !== version) {
+      const client = event.clientId && await self.clients.get(event.clientId);
+      client?.postMessage({ type: 'RA2WEB_RUNTIME_VERSION_MISMATCH', expected: version, actual: manifest.assetVersion });
+      return new Response('Dependency changed; reload the page', { status: 409 });
+    }
+    integrity = manifest.files?.[url.pathname.slice(1)]?.integrity;
+  }
+  if (!integrity) return new Response('Dependency integrity is missing', { status: 404 });
+  const response = await fetch(new Request(event.request, { integrity }));
+  if (isCacheable(response)) await (await caches.open(RA2WEB_APP_CACHE)).put(event.request, response.clone());
   return response;
 }
 
