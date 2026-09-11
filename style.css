@@ -3671,3 +3671,13 @@ input[type="range"]:focus {
 #ra2web-root .victory-captcha.error span {
     color: orangered;
 }
+
+/* Resource recovery remains usable before game resource images are loaded. */
+#ra2web-root .game-res-box.message-box .message-box-content { max-height: 100%; overflow-y: auto; box-sizing: border-box; }
+#ra2web-root .game-res-box .recovery-reason { color: #ffdc73; white-space: pre-wrap; overflow-wrap: anywhere; }
+#ra2web-root .game-res-box .recovery-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+#ra2web-root .game-res-box .recovery-actions .dialog-button { height: auto; min-height: 32px; white-space: normal; }
+#ra2web-root .game-res-box .recovery-cleanup-note { font-size: 12px; line-height: 1.5; color: #d0d0d0; }
+#ra2web-root .game-res-box .recovery-actions .clear-resources { width: auto; min-width: 220px; padding: 4px 12px; }
+#ra2web-root .game-res-box.message-box .message-box-content .drop-container { background-image: none; }
+#ra2web-root .game-res-box.message-box .message-box-content .browse-container p { margin: 10px 0; }
