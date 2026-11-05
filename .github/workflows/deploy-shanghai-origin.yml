@@ -16,7 +16,7 @@ jobs:
   deploy:
     if: github.repository == 'huangkaoya/ra2web.github.io' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
       - name: Check out current main
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
@@ -34,7 +34,8 @@ jobs:
           revision=$(git rev-parse HEAD)
           git archive --format=tar "$revision" | tar -xf - -C "$payload_dir/site"
           git ls-tree -rz --full-tree "$revision" > "$payload_dir/git-tree"
-          tar -czf "$RUNNER_TEMP/ra2web-origin.tar.gz" -C "$payload_dir" site git-tree
+          tar -cf - -C "$payload_dir" site git-tree | \
+            xz -T1 -6 --lzma2=dict=64MiB > "$RUNNER_TEMP/ra2web-origin.tar.xz"
           printf 'ORIGIN_REVISION=%s\n' "$revision" >> "$GITHUB_ENV"
 
       - name: Push and atomically publish verified files
@@ -54,7 +55,7 @@ jobs:
             -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts_path" \
             -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=4 \
             ra2web-static@124.222.237.47 "deploy $ORIGIN_REVISION" \
-            < "$RUNNER_TEMP/ra2web-origin.tar.gz"
+            < "$RUNNER_TEMP/ra2web-origin.tar.xz"
 
       - name: Verify the public HTTP origin
         shell: bash
