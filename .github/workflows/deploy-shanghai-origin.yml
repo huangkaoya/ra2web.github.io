@@ -34,8 +34,6 @@ jobs:
           revision=$(git rev-parse HEAD)
           git archive --format=tar "$revision" | tar -xf - -C "$payload_dir/site"
           git ls-tree -rz --full-tree "$revision" > "$payload_dir/git-tree"
-          tar -cf - -C "$payload_dir" site git-tree | \
-            xz -T1 -6 --lzma2=dict=64MiB > "$RUNNER_TEMP/ra2web-origin.tar.xz"
           printf 'ORIGIN_REVISION=%s\n' "$revision" >> "$GITHUB_ENV"
 
       - name: Push and atomically publish verified files
@@ -47,15 +45,28 @@ jobs:
           test -n "$ORIGIN_SSH_KEY"
           key_path="$RUNNER_TEMP/shanghai-origin-key"
           hosts_path="$RUNNER_TEMP/shanghai-origin-known-hosts"
-          trap 'rm -f "$key_path" "$hosts_path"' EXIT
+          config_path="$RUNNER_TEMP/shanghai-origin-ssh-config"
+          trap 'rm -f "$key_path" "$hosts_path" "$config_path"' EXIT
           umask 077
           printf '%s\n' "$ORIGIN_SSH_KEY" > "$key_path"
           printf '%s\n' '124.222.237.47 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC3QUYAe7QL5haRmWD5QjrZwB2rZsmCAeHJdNO/z500q' > "$hosts_path"
-          ssh -T -i "$key_path" -o IdentitiesOnly=yes -o BatchMode=yes \
-            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts_path" \
-            -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=4 \
-            ra2web-static@124.222.237.47 "deploy $ORIGIN_REVISION" \
-            < "$RUNNER_TEMP/ra2web-origin.tar.xz"
+          cat > "$config_path" <<EOF
+          Host shanghai-origin
+            HostName 124.222.237.47
+            User ra2web-static
+            IdentityFile "$key_path"
+            UserKnownHostsFile "$hosts_path"
+            IdentitiesOnly yes
+            BatchMode yes
+            StrictHostKeyChecking yes
+            ConnectTimeout 20
+            ServerAliveInterval 15
+            ServerAliveCountMax 4
+          EOF
+          rsync --archive --delete --checksum --compress --no-owner --no-group \
+            -e "ssh -T -F $config_path" \
+            "$RUNNER_TEMP/ra2web-origin-payload/" shanghai-origin:./
+          ssh -T -F "$config_path" shanghai-origin "publish $ORIGIN_REVISION"
 
       - name: Verify the public HTTP origin
         shell: bash
