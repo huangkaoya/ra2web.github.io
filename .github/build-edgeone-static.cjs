@@ -28,12 +28,12 @@ const routes = {
   version: 3,
   routes: [
     { handle: 'filesystem' },
+    { src: '/.*', headers: { 'Cache-Control': 'no-store' }, continue: true },
     {
       src: '/.*',
       dest: '/404.html',
       'server-name': 'file',
       status: 404,
-      headers: { 'cache-control': 'no-store' },
     },
   ],
   conf: config,
