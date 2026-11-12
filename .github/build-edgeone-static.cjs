@@ -28,7 +28,6 @@ const routes = {
   version: 3,
   routes: [
     { handle: 'filesystem' },
-    { src: '/.*', headers: { 'Cache-Control': 'no-store' }, continue: true },
     {
       src: '/.*',
       dest: '/404.html',
